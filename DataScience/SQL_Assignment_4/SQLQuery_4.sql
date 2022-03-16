@@ -34,7 +34,6 @@ CREATE TABLE Orders
 	[Order_ID] INT PRIMARY KEY IDENTITY(1,1) NOT NULL
 )
 
--- BEFORE DISCOUNT
 SET IDENTITY_INSERT Products ON
 INSERT INTO Orders
     (Product_ID, Selling_Quantity, Selling_Date)
@@ -50,15 +49,8 @@ VALUES
 	(4, 2, '2022-1-19'),
 	(5, 2, '2022-2-2'),
 	(5, 2, '2022-2-5'),
-	(5, 1, '2022-2-8')
-SET IDENTITY_INSERT Products OFF
-
--- AFTER DISCOUNT
-SET IDENTITY_INSERT Products ON
-INSERT INTO Orders
-    (Product_ID, Selling_Quantity, Selling_Date)
-VALUES 
-    (1, 3, '2022-2-16'),
+	(5, 1, '2022-2-8'),
+	(1, 3, '2022-2-16'),
 	(1, 3, '2022-2-18'),
 	(1, 3, '2022-2-19'),
 	(2, 1, '2022-2-21'),
