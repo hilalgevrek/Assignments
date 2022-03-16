@@ -35,7 +35,6 @@ CREATE TABLE Orders
 )
 
 -- BEFORE DISCOUNT
-
 SET IDENTITY_INSERT Products ON
 INSERT INTO Orders
     (Product_ID, Selling_Quantity, Selling_Date)
@@ -55,7 +54,6 @@ VALUES
 SET IDENTITY_INSERT Products OFF
 
 -- AFTER DISCOUNT
-
 SET IDENTITY_INSERT Products ON
 INSERT INTO Orders
     (Product_ID, Selling_Quantity, Selling_Date)
@@ -112,6 +110,7 @@ FROM (SELECT Product_ID, SUM(Selling_Quantity) AS Before_Total FROM Summary WHER
 WHERE A.Product_ID = B.Product_ID;
 
 SELECT * FROM Discount_Effects;
+
 
 CREATE VIEW Effects
 AS
