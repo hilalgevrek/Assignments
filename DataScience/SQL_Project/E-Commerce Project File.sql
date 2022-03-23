@@ -116,7 +116,7 @@ WITH A AS
 		Customer_Name IN
 		( 
 			SELECT Customer_Name FROM combined_table WHERE Prod_id = 'Prod_11'  
-			INTERSECT														   -- People purchased from both Prod_11 and Prod_14 
+			INTERSECT  -- People purchased from both Prod_11 and Prod_14 
 			SELECT Customer_Name FROM combined_table WHERE Prod_id = 'Prod_14' 
 		)
 		GROUP BY Customer_Name 
@@ -128,7 +128,7 @@ WITH A AS
 		Customer_Name IN
 		(
 			SELECT Customer_Name FROM combined_table WHERE Prod_id = 'Prod_11'  
-			INTERSECT														   -- People purchased from both Prod_11 and Prod_14
+			INTERSECT	-- People purchased from both Prod_11 and Prod_14
 			SELECT Customer_Name FROM combined_table WHERE Prod_id = 'Prod_14' 
 		)
 		GROUP BY Customer_Name 
